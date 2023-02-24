@@ -8,9 +8,6 @@ import com.easydatax.datax.admin.mapper.JobRegistryMapper;
 import com.easydatax.datatx.core.biz.model.ReturnT;
 import com.easydatax.datatx.core.enums.RegistryConfig;
 import com.easydatax.datax.admin.core.util.I18nUtil;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -21,7 +18,6 @@ import java.util.*;
  */
 @RestController
 @RequestMapping("/api/jobGroup")
-@Api(tags = "执行器管理接口")
 public class JobGroupController {
 
     @Resource
@@ -32,13 +28,11 @@ public class JobGroupController {
     private JobRegistryMapper jobRegistryMapper;
 
     @GetMapping("/list")
-    @ApiOperation("执行器列表")
     public ReturnT<List<JobGroup>> getExecutorList() {
         return new ReturnT<>(jobGroupMapper.findAll());
     }
 
     @PostMapping("/save")
-    @ApiOperation("新建执行器")
     public ReturnT<String> save(@RequestBody JobGroup jobGroup) {
 
         // valid
@@ -68,7 +62,6 @@ public class JobGroupController {
     }
 
     @PostMapping("/update")
-    @ApiOperation("更新执行器")
     public ReturnT<String> update(@RequestBody JobGroup jobGroup) {
         // valid
         if (jobGroup.getAppName() == null || jobGroup.getAppName().trim().length() == 0) {
@@ -133,7 +126,6 @@ public class JobGroupController {
     }
 
     @PostMapping("/remove")
-    @ApiOperation("移除执行器")
     public ReturnT<String> remove(int id) {
 
         // valid
@@ -152,19 +144,15 @@ public class JobGroupController {
     }
 
     @RequestMapping(value = "/loadById", method = RequestMethod.POST)
-    @ApiOperation("根据id获取执行器")
     public ReturnT<JobGroup> loadById(int id) {
         JobGroup jobGroup = jobGroupMapper.load(id);
         return jobGroup != null ? new ReturnT<>(jobGroup) : new ReturnT<>(ReturnT.FAIL_CODE, null);
     }
 
     @GetMapping("/query")
-    @ApiOperation("查询执行器")
-    public ReturnT<List<JobGroup>> get(@ApiParam(value = "执行器AppName")
+    public ReturnT<List<JobGroup>> get(
                                        @RequestParam(value = "appName", required = false) String appName,
-                                       @ApiParam(value = "执行器名称")
                                        @RequestParam(value = "title", required = false) String title,
-                                       @ApiParam(value = "执行器地址列表")
                                        @RequestParam(value = "addressList", required = false) String addressList) {
         return new ReturnT<>(jobGroupMapper.find(appName, title, addressList));
     }

@@ -1,6 +1,5 @@
 package com.easydatax.datax.admin.entity;
 
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author xuxueli 2019-05-04 16:43:12
@@ -8,7 +7,6 @@ import io.swagger.annotations.ApiModelProperty;
 public class JobRole {
 
     private int id;
-    @ApiModelProperty("账号")
     private String name;
 
     public int getId() {

@@ -6,8 +6,6 @@ import com.easydatax.datax.admin.mapper.JobInfoMapper;
 import com.easydatax.datax.admin.mapper.JobLogGlueMapper;
 import com.easydatax.datatx.core.biz.model.ReturnT;
 import com.easydatax.datax.admin.core.util.I18nUtil;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +21,6 @@ import static com.easydatax.datatx.core.biz.model.ReturnT.FAIL_CODE;
  */
 @RestController
 @RequestMapping("/jobcode")
-@Api(tags = "任务状态接口")
 public class JobCodeController {
 
     @Resource
@@ -33,7 +30,6 @@ public class JobCodeController {
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    @ApiOperation("保存任务状态")
     public ReturnT<String> save(Model model, int id, String glueSource, String glueRemark) {
         // valid
         if (glueRemark == null) {

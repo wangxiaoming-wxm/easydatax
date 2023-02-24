@@ -8,6 +8,9 @@ spring:
     url: jdbc:mysql://192.168.56.101:3306/easydatax?serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&useSSL=false&nullNamePatternMatchesAll=true&useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
     hikari:
       ## 最小空闲连接数量
@@ -75,9 +78,10 @@ mybatis-plus:
 
 # 配置mybatis-plus打印sql日志
 logging:
-  level:
-    com.easydatax.datax.admin.mapper: info
-    path: ./logs/admin
+  root:
+    level:
+      com.easydatax.datax.admin.mapper: info
+      path: logs/admin
 
 datax:
   job:
@@ -94,3 +98,4 @@ datax:
 datasource:
   aes:
     key: AD42F6697B035B75
+

@@ -2,8 +2,6 @@ package com.easydatax.datax.admin.controller;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import com.easydatax.datax.admin.service.DatasourceQueryService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +19,6 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("api/metadata")
-@Api(tags = "jdbc数据库查询控制器")
 public class MetadataController extends BaseController {
 
     @Autowired
@@ -34,7 +31,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/getDBs")
-    @ApiOperation("根据数据源id获取mongo库名")
     public R<List<String>> getDBs(Long datasourceId) throws IOException {
         return success(datasourceQueryService.getDBs(datasourceId));
     }
@@ -47,7 +43,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/collectionNames")
-    @ApiOperation("根据数据源id,dbname获取CollectionNames")
     public R<List<String>> getCollectionNames(Long datasourceId,String dbName) throws IOException {
         return success(datasourceQueryService.getCollectionNames(datasourceId,dbName));
     }
@@ -59,7 +54,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/getDBSchema")
-    @ApiOperation("根据数据源id获取 db schema")
     public R<List<String>> getTableSchema(Long datasourceId) {
         return success(datasourceQueryService.getTableSchema(datasourceId));
     }
@@ -71,7 +65,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/getTables")
-    @ApiOperation("根据数据源id获取可用表名")
     public R<List<String>> getTableNames(Long datasourceId,String tableSchema) throws IOException {
         return success(datasourceQueryService.getTables(datasourceId,tableSchema));
     }
@@ -84,7 +77,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/getColumns")
-    @ApiOperation("根据数据源id和表名获取所有字段")
     public R<List<String>> getColumns(Long datasourceId, String tableName) throws IOException {
         return success(datasourceQueryService.getColumns(datasourceId, tableName));
     }
@@ -97,7 +89,6 @@ public class MetadataController extends BaseController {
      * @return
      */
     @GetMapping("/getColumnsByQuerySql")
-    @ApiOperation("根据数据源id和sql语句获取所有字段")
     public R<List<String>> getColumnsByQuerySql(Long datasourceId, String querySql) throws SQLException {
         return success(datasourceQueryService.getColumnsByQuerySql(datasourceId, querySql));
     }
