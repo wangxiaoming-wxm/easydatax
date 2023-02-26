@@ -8,10 +8,6 @@ spring:
     url: jdbc:mysql://192.168.56.101:3306/easydatax?serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&useSSL=false&nullNamePatternMatchesAll=true&useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
 
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-
     hikari:
       ## 最小空闲连接数量
       minimum-idle: 5

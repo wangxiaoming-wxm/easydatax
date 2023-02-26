@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.easydatax</groupId>
-    <artifactId>datax-assembly</artifactId>
+    <artifactId>assembly</artifactId>
 
     <build>
         <plugins>

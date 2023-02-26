@@ -10,11 +10,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>datax-admin</module>
-        <module>datax-core</module>
-        <module>datax-executor</module>
-        <module>datax-rpc</module>
-        <module>datax-assembly</module>
+        <module>master</module>
+        <module>core</module>
+        <module>worker</module>
+        <module>rpc</module>
+        <module>assembly</module>
     </modules>
 
     <properties>
@@ -31,8 +31,8 @@
         <postgresql.version>42.2.5</postgresql.version>
         <mysql-connector.version>5.1.47</mysql-connector.version>
         <mybatisplus.version>3.3.1</mybatisplus.version>
-        <spring.version>5.3.21</spring.version>
-        <spring-boot.version>2.6.9</spring-boot.version>
+        <spring.version>5.3.23</spring.version>
+        <spring-boot.version>2.7.1</spring-boot.version>
         <hadoop.version>3.2.4</hadoop.version>
         <hive.jdbc.version>3.1.2</hive.jdbc.version>
 
