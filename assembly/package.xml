@@ -10,7 +10,7 @@
         <fileSet>
             <directory>../packages</directory>
             <includes>
-                <include>datax-*</include>
+                <include>core,master,worker,rpc,assembly</include>
             </includes>
             <outputDirectory>packages</outputDirectory>
         </fileSet>
