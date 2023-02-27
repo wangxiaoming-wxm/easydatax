@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-STOP_MODULES=("datax-admin"  "datax-executor" )
+STOP_MODULES=("easydatax-master"  "easydatax-worker" )
 
 
 function LOG(){
@@ -20,7 +20,7 @@ abs_path(){
 }
 
 BIN=`abs_path`
-SHELL_LOG="${BIN}/console.out"
+SHELL_LOG="${BIN}/easydatax.log"
 
 LOG INFO "\033[1m Try to Stop Modules In Order \033[0m"
 for module in ${STOP_MODULES[@]}

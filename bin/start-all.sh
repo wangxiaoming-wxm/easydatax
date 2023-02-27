@@ -1,6 +1,6 @@
 #!/bin/bash
 
-START_MODULES=("datax-admin"  "datax-executor" )
+START_MODULES=("easydatax-master"  "easydatax-worker" )
 
 function LOG(){
   currentTime=`date "+%Y-%m-%d %H:%M:%S.%3N"`
@@ -18,7 +18,7 @@ abs_path(){
 }
 
 BIN=`abs_path`
-SHELL_LOG="${BIN}/console.out"
+SHELL_LOG="${BIN}/easydatax.log"
 
 LOG INFO "\033[1m Try To Start Modules In Order \033[0m"
 for module in ${START_MODULES[@]}

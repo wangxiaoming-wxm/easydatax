@@ -15,7 +15,7 @@ import com.easydatax.datatx.core.util.Constants;
 import com.easydatax.datax.admin.tool.meta.DatabaseInterface;
 import com.easydatax.datax.admin.tool.meta.DatabaseMetaFactory;
 import com.zaxxer.hikari.HikariDataSource;
-import org.apache.commons.lang.StringUtils;
+import  org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

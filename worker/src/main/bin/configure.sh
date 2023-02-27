@@ -2,8 +2,8 @@
 
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-SHELL_LOG="${DIR}/console.out"
-SERVER_NAME="datax-executor"
+SHELL_LOG="${DIR}/easydatax.log"
+SERVER_NAME="easydatax-worker"
 USER=`whoami`
 SAFE_MODE=true
 SUDO_USER=false
@@ -106,7 +106,7 @@ if [ $? == 0 ]; then
 fi
 
 BIN=`abs_path`
-SERVER_NAME_SIMPLE=${SERVER_NAME/datax-/}
+SERVER_NAME_SIMPLE=${SERVER_NAME/easydatax-/}
 
 LOG_PATH=${BIN}/../logs
 if [ "x${BASE_LOG_DIR}" != "x" ]; then

@@ -19,7 +19,7 @@ import com.easydatax.datatx.core.glue.GlueTypeEnum;
 import com.easydatax.datax.admin.core.scheduler.JobScheduler;
 import com.easydatax.datax.rpc.util.IpUtil;
 import com.easydatax.datax.rpc.util.ThrowableUtil;
-import org.apache.commons.lang.StringUtils;
+import  org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

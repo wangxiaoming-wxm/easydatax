@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-SHELL_LOG="${DIR}/console.out"
-SERVER_NAME="datax-admin"
+SHELL_LOG="${DIR}/easydatax.log"
+SERVER_NAME="easydatax-master"
 USER=`whoami`
 SAFE_MODE=true
 SUDO_USER=false
@@ -10,7 +10,7 @@ ENV_FILE_PATH="${DIR}/env.properties"
 
 usage(){
   printf "Configure usage:\n"
-  printf "\t%-10s  %-10s  %-2s \n" --server "server-name" "Name of datax-admin server"
+  printf "\t%-10s  %-10s  %-2s \n" --server "server-name" "Name of easydatax-master server"
   printf "\t%-10s  %-10s  %-2s \n" --unsafe "unsafe mode" "Will clean the directory existed"
   printf "\t%-10s  %-10s  %-2s \n" --safe "safe mode" "Will not modify the directory existed (Default)"
   printf "\t%-10s  %-10s  %-2s \n" "-h|--help" "usage" "List help document"
@@ -118,7 +118,7 @@ if [ $? == 0 ]; then
 fi
 
 BIN=`abs_path`
-SERVER_NAME_SIMPLE=${SERVER_NAME/datax-/}
+SERVER_NAME_SIMPLE=${SERVER_NAME/easydatax-/}
 
 LOG_PATH=${BIN}/../logs
 if [ "x${BASE_LOG_DIR}" != "x" ]; then
@@ -186,9 +186,9 @@ if [ "x${SQL_SOURCE_PATH}" != "x" ] && [ -f "${SQL_SOURCE_PATH}" ]; then
           USERNAME="root"
         fi
         read -p "Please input the db password(default: ""): " PASSWORD
-        read -p "Please input the db name(default: dataxweb)" DATABASE
+        read -p "Please input the db name(default: easydatax)" DATABASE
         if [ "x${DATABASE}" == "x" ]; then
-          DATABASE="dataxweb"
+          DATABASE="easydatax"
         fi
         mysql -h ${HOST} -P ${PORT} -u ${USERNAME} -p${PASSWORD}  --default-character-set=utf8 -e \
         "CREATE DATABASE IF NOT EXISTS ${DATABASE}; USE ${DATABASE}; source ${SQL_SOURCE_PATH};"

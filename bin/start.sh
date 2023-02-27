@@ -2,7 +2,7 @@
 
 
 MODULE_NAME=""
-MODULE_DEFAULT_PREFIX="datax-"
+MODULE_DEFAULT_PREFIX="easydatax-"
 
 usage(){
   echo "Usage is [-m module will be started]"
@@ -25,7 +25,7 @@ abs_path(){
 
 BIN=`abs_path`
 MODULE_DIR=${BIN}/../modules
-SHELL_LOG="${BIN}/console.out"
+SHELL_LOG="${BIN}/easydatax.log"
 
 interact_echo(){
   while [ 1 ]; do

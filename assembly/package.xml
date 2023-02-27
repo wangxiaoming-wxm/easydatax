@@ -10,7 +10,11 @@
         <fileSet>
             <directory>../packages</directory>
             <includes>
-                <include>core,master,worker,rpc,assembly</include>
+                <include>core</include>
+                <include>master</include>
+                <include>worker</include>
+                <include>rpc</include>
+                <include>assembly</include>
             </includes>
             <outputDirectory>packages</outputDirectory>
         </fileSet>

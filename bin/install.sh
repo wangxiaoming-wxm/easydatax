@@ -5,9 +5,9 @@ export BASE_LOG_DIR=""
 export BASE_CONF_DIR=""
 export BASE_DATA_DIR=""
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-SHELL_LOG="${DIR}/console.out"
+SHELL_LOG="${DIR}/easydatax.log"
 
-export SQL_SOURCE_PATH="${DIR}/db/datax_web.sql"
+export SQL_SOURCE_PATH="${DIR}/db/easydatax.sql"
 
 MODULES_DIR="${DIR}/../modules"
 PACKAGE_DIR="${DIR}/../packages"
@@ -133,7 +133,7 @@ install_modules(){
 }
 
 scan_to_install_modules(){
-  echo "Scan modules directory: [$1] to find server under dataxweb"
+  echo "Scan modules directory: [$1] to find server under easydatax"
   let c=0
   ls_out=`ls $1`
   for dir in ${ls_out}

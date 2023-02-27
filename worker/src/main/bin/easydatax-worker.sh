@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 
-FRIEND_NAME=DATAX-EXEXUTOR
-MAIN_CLASS=com.wugui.datax.executor.DataXExecutorApplication
+FRIEND_NAME=EASYDATAX-WORKER
+MAIN_CLASS=com.easydatax.datax.executor.WorkerApplication
 if [ ! ${ENV_FILE} ]; then
     ENV_FILE="env.properties"
 fi
@@ -56,7 +56,7 @@ load_env(){
 }
 
 BIN=`abs_path`
-SHELL_LOG="${BIN}/console.out"
+SHELL_LOG="${BIN}/easydatax.log"
 load_env
 
 #verify environment

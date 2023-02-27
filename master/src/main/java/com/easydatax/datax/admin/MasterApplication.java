@@ -12,12 +12,12 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @SpringBootApplication(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
-public class DataXAdminApplication {
+public class MasterApplication {
 
-    private static Logger logger = LoggerFactory.getLogger(DataXAdminApplication.class);
+    private static Logger logger = LoggerFactory.getLogger(MasterApplication.class);
 
     public static void main(String[] args) throws UnknownHostException {
-        Environment env = new SpringApplication(DataXAdminApplication.class).run(args).getEnvironment();
+        Environment env = new SpringApplication(MasterApplication.class).run(args).getEnvironment();
         String envPort = env.getProperty("server.port");
         String envContext = env.getProperty("server.contextPath");
         String port = envPort == null ? "8080" : envPort;
